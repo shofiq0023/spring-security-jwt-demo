@@ -46,6 +46,7 @@ public class UserService {
 		
 		claims.put("id", user.get().getId());
 		claims.put("username", user.get().getUsername());
+		claims.put("sub", user.get().getUsername());
 		claims.put("email", user.get().getEmail());
 		
 		String token = jwtUtils.generateToken(claims, user.get().getUsername());

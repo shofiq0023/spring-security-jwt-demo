@@ -35,6 +35,8 @@ public class SecurityConfiguration {
 				req
 					.requestMatchers(reqWhiteList)
 					.permitAll()
+					.requestMatchers("/admin").hasAnyAuthority("ROLE_ADMIN")
+					.requestMatchers("/normal").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
 					.anyRequest()
 					.authenticated()
 			)

@@ -2,6 +2,7 @@ package com.security.controllers;
 
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,5 +27,15 @@ public class Controllers {
 	@PostMapping("/authenticate")
 	public  Map<String, Object> authenticate(@RequestBody AuthReq req) {
 		return userService.authenticate(req);
+	}
+	
+	@GetMapping("/public")
+	public String forPublic() {
+		return "This is a public api";
+	}
+	
+	@GetMapping("/admin")
+	public String adminApi() {
+		return "This is for admins";
 	}
 }

@@ -18,7 +18,7 @@ public class CustomUserDetails implements UserDetails {
 	private List<GrantedAuthority> authorities;
 
 	public CustomUserDetails(UserEntity user) {
-		this.name = user.getName();
+		this.name = user.getUsername();
 		this.password = user.getPassword();
 		this.authorities = Arrays.stream(user.getRoles().split(",")).map(SimpleGrantedAuthority::new)
 				.collect(Collectors.toList());
