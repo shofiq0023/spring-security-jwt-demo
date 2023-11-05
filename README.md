@@ -1,0 +1,2 @@
+# Spring Security Demo Project
+A project with spring-security using json web tokens for authentication and authorization. Spring data jpa was also used for saving, retriving user information from database.
